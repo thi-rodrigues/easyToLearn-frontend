@@ -7,12 +7,20 @@ a {
     align-items: center;
   }
   
-  .example-icon {
-      display: flex;
-      align-items: center;
-  
-    }
-  
-  span {
-    padding-left: 5px;
+.example-icon {
+    display: flex;
+    align-items: center;
+
   }
+
+span {
+  padding-left: 5px;
+}
+
+img {
+  display: flex;
+  margin: 0;
+  padding-left: 50px;
+  width: auto;
+  height: 35px;
+}

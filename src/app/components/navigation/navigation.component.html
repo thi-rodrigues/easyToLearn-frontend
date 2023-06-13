@@ -1,14 +1,13 @@
+<p-button class="button-opened" icon="pi pi-align-justify" (click)="toggleSideNav()" class="button-opened"
+styleClass="p-button-text p-button-lg"></p-button><br>
+
 <mat-sidenav-container class="container" style="background-color: #fff;">
-    <mat-sidenav class="sidenav" mode="side" opened="true" fixedInViewport="true" fixedTopGap="64">
+    <mat-sidenav class="sidenav" mode="side" [opened]="opened" fixedInViewport="true" fixedTopGap="64">
        
         <mat-nav-list class="nav-list">
             <a mat-list-item routerLink="/inicio">
                 <i class="material-icons"> home </i>
                 <span>Home</span>
-            </a>
-            <a mat-list-item routerLink="/palavra"> 
-                <i class="material-icons"> add </i>
-                <span> Palavras </span>
             </a>
             <a mat-list-item routerLink="/dicionario"> 
                 <i class="material-icons"> list </i>

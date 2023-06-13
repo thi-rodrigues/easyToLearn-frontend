@@ -3,4 +3,14 @@
     bottom: 0;
     display: flex;
     justify-content: flex-end;
+    max-height: 35px;
+    font-size: 13px;
+}
+
+img {
+    display: flex;
+    margin: 0;
+    margin-bottom: 5px;
+    width: auto;
+    height: 20px;
 }

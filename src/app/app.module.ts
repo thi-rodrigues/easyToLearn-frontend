@@ -21,6 +21,9 @@ import { DropdownModule } from 'primeng/dropdown';
 import { InputMaskModule } from 'primeng/inputmask';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { InputNumberModule } from 'primeng/inputnumber';
+import { ProgressBarModule } from 'primeng/progressbar';
+import { PaginatorModule } from 'primeng/paginator';
+// import { ChartModule } from 'primeng/chart';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,6 +39,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { PraticarComponent } from './view/praticar/praticar.component';
 import { PalavraComponent } from './view/palavra/palavra.component';
 import { DicionarioComponent } from './view/dicionario/dicionario.component';
+import { EstatisticasComponent } from './view/estatisticas/estatisticas.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +51,8 @@ import { DicionarioComponent } from './view/dicionario/dicionario.component';
     MenssagesComponent,
     PraticarComponent,
     PalavraComponent,
-    DicionarioComponent
+    DicionarioComponent,
+    EstatisticasComponent
   ],
   imports: [
     BrowserModule,
@@ -72,7 +77,10 @@ import { DicionarioComponent } from './view/dicionario/dicionario.component';
     InputNumberModule,
     MatTreeModule,
     MatCheckboxModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    ProgressBarModule,
+    PaginatorModule,
+    // ChartModule,
   ],
   providers: [ MessageService, MenssagesComponent, RouterLink, ConfirmationService ],
   bootstrap: [ AppComponent ]

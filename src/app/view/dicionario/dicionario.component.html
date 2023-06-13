@@ -1,1 +1,38 @@
-<p>dicionario works!</p>
+<!-- <div class="messages">
+    <p-messages [(value)]="msgs"></p-messages>
+</div> -->
+
+
+<div class="card">
+    <p-progressBar mode="indeterminate" [style]="{'height': '10px', 'border-radius': '0', 'background':'#0b2ec9'}" *ngIf="progressBar" 
+        [color]="azul"></p-progressBar>
+</div>
+
+<div class="card">
+    <p-table
+        [value]="dicionario"
+        [rows]="10"
+        [showCurrentPageReport]="true"
+         [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header">
+            <tr>
+                <th style="width:25%">Palavra</th>
+                <th style="width:25%">Significado</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-dicionario>
+            <tr>
+                <td>{{ dicionario.palavra }}</td>
+                <td>{{ dicionario.significado }}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+    <div class="card flex justify-content-center">
+        <p-paginator (onPageChange)="onPageChange($event)" [first]="0" [rows]="10" [totalRecords]="dicionarioTotalElements"
+            [style]="{'border-radius': '0', color: 'red'}"></p-paginator>
+    </div>
+</div>
+<div class="card flex justify-content-center">
+    <button pButton pRipple label="Novo" icon="pi pi-plus" routerLink="/palavra" [style]="{ 'margin': '.5em .5em 0 .5em'  }"></button>
+    <button pButton pRipple label="Voltar" icon="pi pi-arrow-left" class="p-button-danger" routerLink="/inicio" ></button>
+</div>
