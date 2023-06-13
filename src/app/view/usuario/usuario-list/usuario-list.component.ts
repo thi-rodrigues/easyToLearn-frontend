@@ -1,28 +1,28 @@
 import { Component, OnInit } from '@angular/core';
-import { Route, Router } from '@angular/router';
-import { ConfirmationService, ConfirmEventType, MessageService } from 'primeng/api';
+import { Router } from '@angular/router';
+import { ConfirmationService, MessageService } from 'primeng/api';
 import { Table } from 'primeng/table';
-import { Cliente } from 'src/app/model/cliente';
+import { Usuario } from 'src/app/model/usuario';
 import { MenssagesComponent } from 'src/app/utils/menssages/menssages.component';
-import { ClienteService } from '../cliente.service';
+import { UsuarioService } from '../usuario.service';
 
 @Component({
-  selector: 'app-cliente-list',
-  templateUrl: './cliente-list.component.html',
-  styleUrls: ['./cliente-list.component.css']
+  selector: 'app-usuario-list',
+  templateUrl: './usuario-list.component.html',
+  styleUrls: ['./usuario-list.component.css']
 })
-export class ClienteListComponent implements OnInit {
+export class UsuarioListComponent implements OnInit {
 
 msgs = [{}];
 
-clientes: Cliente[] = [];;
+usuarios: Usuario[] = [];;
 
 loading: boolean = true;
 
 activityValues: number[] = [0, 100];
 
 constructor( 
-  private clienteService: ClienteService,
+  private usuarioService: UsuarioService,
   private router: Router,
   private confirmationService: ConfirmationService, private messageService: MessageService,
   private menssages: MenssagesComponent,
@@ -31,8 +31,8 @@ constructor(
   ngOnInit(): void {
     this.msgs = [];
 
-    this.clienteService.buscarClientes().subscribe(clientes => {
-      this.clientes = clientes.content;
+    this.usuarioService.buscarClientes().subscribe(usuarios => {
+      this.usuarios = usuarios.content;
       this.loading = false;
     }, (erro) => {
       console.log(erro);
@@ -44,12 +44,12 @@ constructor(
   }
 
   editar(id: number) {
-    this.router.navigate([`/clientes/editar/${id}`])
+    this.router.navigate([`/usuarios/editar/${id}`])
   }
 
   confirmarExclusao(nome: string, id: number) {
     this.confirmationService.confirm({
-        message: 'Deseja realmente excluir o cliente ' + nome + '?',
+        message: 'Deseja realmente excluir o usuario ' + nome + '?',
         header: 'Confirmar Exclusão',
         icon: 'pi pi-exclamation-triangle',
         accept: () => {
@@ -61,7 +61,7 @@ constructor(
   }
 
   excluir(id: number) {
-    this.clienteService.excluirClientesPorId(id).subscribe(e => {
+    this.usuarioService.excluirClientesPorId(id).subscribe(e => {
       this.ngOnInit();
     });
   }

@@ -5,7 +5,7 @@
 <div class="card">
     <p-table
         #dt1
-        [value]="clientes"
+        [value]="usuarios"
         dataKey="id"
         [rows]="10"
         [showCurrentPageReport]="true"
@@ -62,34 +62,34 @@
               </th>
             </tr>
         </ng-template>
-        <ng-template pTemplate="body" let-cliente>
+        <ng-template pTemplate="body" let-usuario>
             <tr>
                 <td>
-                    <span class="ml-1 vertical-align-middle">{{ cliente.nome }}</span>
+                    <span class="ml-1 vertical-align-middle">{{ usuario.nome }}</span>
                 </td>
                 <td>
-                    <span class="ml-1 vertical-align-middle">{{ cliente.tipo }}</span>
+                    <span class="ml-1 vertical-align-middle">{{ usuario.tipo }}</span>
                 </td>
                 <td>
-                    <span class="ml-1 vertical-align-middle">{{ cliente.cpfCnpj }}</span>
+                    <span class="ml-1 vertical-align-middle">{{ usuario.cpfCnpj }}</span>
                 </td>
                 <td>
-                    <span class="ml-1 vertical-align-middle">{{ cliente.rgIe }}</span>
+                    <span class="ml-1 vertical-align-middle">{{ usuario.rgIe }}</span>
                 </td>
                 <td>
-                    <span class="ml-1 vertical-align-middle">{{ cliente.telefone }}</span>
+                    <span class="ml-1 vertical-align-middle">{{ usuario.telefone }}</span>
                 </td>
                 <td>
-                    <span class="ml-1 vertical-align-middle">{{ cliente.dataCadastro | date:'dd/MM/yyyy HH:mm:ss' }}</span>
+                    <span class="ml-1 vertical-align-middle">{{ usuario.dataCadastro | date:'dd/MM/yyyy HH:mm:ss' }}</span>
                 </td>
                 <td>
                     <span class="ml-1 vertical-align-middle">
-                        <p-button (click)="editar(cliente.id)" icon="pi pi-pencil">
+                        <p-button (click)="editar(usuario.id)" icon="pi pi-pencil">
                         </p-button>
                     </span>
                     <span class="ml-1 vertical-align-middle">
                       <p-confirmDialog [style]="{width: '50vw'}" class="confirmDialog"></p-confirmDialog>
-                      <p-button (click)="confirmarExclusao(cliente.nome, cliente.id)" icon="pi pi-trash">
+                      <p-button (click)="confirmarExclusao(usuario.nome, usuario.id)" icon="pi pi-trash">
                       </p-button>
                     </span>
                 </td>

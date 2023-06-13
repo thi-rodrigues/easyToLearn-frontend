@@ -2,26 +2,26 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environment/environment';
-import { Cliente } from '../../model/cliente';
+import { Usuario } from '../../model/usuario';
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class ClienteService {
+export class UsuarioService {
 
-  baseUrl = environment.baseUri + "/clientes";
+  baseUrl = environment.baseUri + "/usuarios";
 
   constructor(
     private http: HttpClient
   ) {};
 
-  criarCliente(cliente: Cliente): Observable<Cliente> {
-    return this.http.post<Cliente>(`${this.baseUrl}`, cliente);
+  criarCliente(usuario: Usuario): Observable<Usuario> {
+    return this.http.post<Usuario>(`${this.baseUrl}`, usuario);
   }
 
-  atualizaraCliente(cliente: Cliente): Observable<Cliente> {
-    return this.http.put<Cliente>(`${this.baseUrl}/${cliente.id}`, cliente);
+  atualizaraCliente(usuario: Usuario): Observable<Usuario> {
+    return this.http.put<Usuario>(`${this.baseUrl}/${usuario.id}`, usuario);
   }
 
   buscarClientes(): Observable<any> {

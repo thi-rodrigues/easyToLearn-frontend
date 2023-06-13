@@ -1,8 +1,7 @@
 
 
 import { Component, OnInit } from '@angular/core';
-import { ClienteService } from '../cliente.service';
-import { Cliente } from '../../../model/cliente';
+import { Usuario } from '../../../model/usuario';
 import { MenssagesComponent } from '../../../utils/menssages/menssages.component';
 import { Router } from '@angular/router';
 import { TipoPessoa } from 'src/app/model/tipoPessoa';
@@ -11,6 +10,7 @@ import {FlatTreeControl} from '@angular/cdk/tree';
 import { Injectable} from '@angular/core';
 import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
 import {BehaviorSubject} from 'rxjs';
+import { UsuarioService } from '../usuario.service';
 
 export class TodoItemNode {
   children: TodoItemNode[];
@@ -78,13 +78,13 @@ export class ChecklistDatabase {
 }
 
 @Component({
-  selector: 'app-cliente-form',
-  templateUrl: './cliente-form.component.html',
-  styleUrls: ['./cliente-form.component.css'],
+  selector: 'app-usuario-form',
+  templateUrl: './usuario-form.component.html',
+  styleUrls: ['./usuario-form.component.css'],
   providers: [MenssagesComponent, ChecklistDatabase]
 })
 
-export class ClienteFormComponent implements OnInit {
+export class UsuarioFormComponent implements OnInit {
 
   flatNodeMap = new Map<TodoItemFlatNode, TodoItemNode>();
 
@@ -106,7 +106,7 @@ export class ClienteFormComponent implements OnInit {
 
   pessoaSelecionada: TipoPessoa;
 
-  // cliente: Cliente = {
+  // usuario: Usuario = {
   //   id: null,
   //   cpfCnpj: null,
   //   dataCadastro: new Date(),
@@ -117,7 +117,7 @@ export class ClienteFormComponent implements OnInit {
   //   tipo: null
   // };
 
-  cliente: Cliente = {
+  usuario: Usuario = {
     id: null,
     cpfCnpj: null,
     dataCadastro: new Date(),
@@ -138,7 +138,7 @@ export class ClienteFormComponent implements OnInit {
   mascaraCpfCnpj = '';
 
   constructor(
-    private clienteService: ClienteService,
+    private usuarioService: UsuarioService,
     private router: Router,
     private _database: ChecklistDatabase
   ) { 
@@ -167,8 +167,8 @@ export class ClienteFormComponent implements OnInit {
   };
 
   criarCliente(): void {
-    this.clienteService.criarCliente(this.cliente).subscribe(() => {
-      this.router.navigate(['/clientes']);
+    this.usuarioService.criarCliente(this.usuario).subscribe(() => {
+      this.router.navigate(['/usuarios']);
     }, (erro) => {
       console.log(erro);
     });
@@ -297,7 +297,7 @@ export class ClienteFormComponent implements OnInit {
     console.log(telefone);
     const nestedNode = this.flatNodeMap.get(node);
     this._database.updateItem(nestedNode!, telefone);
-    this.cliente.telefone.push({telefone});
+    this.usuario.telefone.push({telefone});
   }
 }
 

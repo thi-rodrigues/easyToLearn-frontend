@@ -29,9 +29,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { HomeComponent } from './view/home/home.component';
 import { MenssagesComponent } from './utils/menssages/menssages.component';
-import { ClienteListComponent } from './view/cliente/cliente-list/cliente-list.component';
-import { ClienteFormComponent } from './view/cliente/cliente-form/cliente-form.component';
-import { ClienteEditComponent } from './view/cliente/cliente-edit/cliente-edit.component';
+import { UsuarioListComponent } from './view/usuario/usuario-list/usuario-list.component';
+import { UsuarioFormComponent } from './view/usuario/usuario-form/usuario-form.component';
+import { UsuarioEditComponent } from './view/usuario/usuario-edit/usuario-edit.component';
 
 import {MatTreeModule} from '@angular/material/tree';
 import {MatCheckboxModule} from '@angular/material/checkbox';
@@ -45,9 +45,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     NavigationComponent,
     HomeComponent,
     MenssagesComponent,
-    ClienteListComponent,
-    ClienteFormComponent,
-    ClienteEditComponent
+    UsuarioListComponent,
+    UsuarioFormComponent,
+    UsuarioEditComponent
   ],
   imports: [
     BrowserModule,

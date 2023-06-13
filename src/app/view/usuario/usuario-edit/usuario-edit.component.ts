@@ -1,22 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Cliente } from 'src/app/model/cliente';
+import { Usuario } from 'src/app/model/usuario';
 import { TipoPessoa } from 'src/app/model/tipoPessoa';
 import { MenssagesComponent } from 'src/app/utils/menssages/menssages.component';
-import { ClienteService } from '../cliente.service';
+import { UsuarioService } from '../usuario.service';
 
 @Component({
-  selector: 'app-cliente-edit',
-  templateUrl: './cliente-edit.component.html',
-  styleUrls: ['./cliente-edit.component.css']
+  selector: 'app-usuario-edit',
+  templateUrl: './usuario-edit.component.html',
+  styleUrls: ['./usuario-edit.component.css']
 })
-export class ClienteEditComponent implements OnInit{
+export class UsuarioEditComponent implements OnInit{
 
   tipoPessoa: TipoPessoa[];
 
   pessoaSelecionada: TipoPessoa;
 
-  cliente: Cliente = {
+  usuario: Usuario = {
     id: null,
     cpfCnpj: null,
     dataCadastro: new Date(),
@@ -30,7 +30,7 @@ export class ClienteEditComponent implements OnInit{
   msgs = [{}];
 
   constructor(
-    private clienteService: ClienteService,
+    private usuarioService: UsuarioService,
     private menssages: MenssagesComponent,
     private router: Router,
     private route: ActivatedRoute
@@ -48,9 +48,9 @@ export class ClienteEditComponent implements OnInit{
   };
 
   atualizaraCliente(): void {
-    this.clienteService.atualizaraCliente(this.cliente).subscribe(() => {
-      // this.menssages.showMensage('success', 'Cliente cadastrado com sucesso!' );
-      this.router.navigate(['/clientes']);
+    this.usuarioService.atualizaraCliente(this.usuario).subscribe(() => {
+      // this.menssages.showMensage('success', 'Usuario cadastrado com sucesso!' );
+      this.router.navigate(['/usuarios']);
     }, (erro) => {
       console.log(erro);
       // for ( const e of erro.mensage ) {
@@ -60,8 +60,8 @@ export class ClienteEditComponent implements OnInit{
   }
 
   buscarClientesPorId(id: string) {
-    this.clienteService.buscarClientesPorId(id).subscribe(cliente => {
-      this.cliente = cliente;
+    this.usuarioService.buscarClientesPorId(id).subscribe(usuario => {
+      this.usuario = usuario;
     })
   }
 }
