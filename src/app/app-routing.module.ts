@@ -2,10 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './view/home/home.component';
-import { UsuarioFormComponent } from './view/usuario/usuario-form/usuario-form.component';
-import { AppComponent } from './app.component';
-import { UsuarioListComponent } from './view/usuario/usuario-list/usuario-list.component';
-import { UsuarioEditComponent } from './view/usuario/usuario-edit/usuario-edit.component';
+import { PraticarComponent } from './view/praticar/praticar.component';
+import { PalavraComponent } from './view/palavra/palavra.component';
+import { DicionarioComponent } from './view/dicionario/dicionario.component';
 
 const routes: Routes = [
   {
@@ -13,11 +12,10 @@ const routes: Routes = [
     redirectTo: 'inicio',
     pathMatch: 'full'
   }, 
-  { path: 'cadastro', component: UsuarioFormComponent     },
   { path: 'inicio',   component: HomeComponent      },
-  { path: 'teste',    component: AppComponent       },
-  { path: 'usuarios',   component: UsuarioListComponent },
-  { path: 'usuarios/editar/:id',   component: UsuarioEditComponent }
+  { path: 'praticar', component: PraticarComponent },
+  { path: 'palavra',  component: PalavraComponent },
+  { path: 'dicionario', component: DicionarioComponent }
 ];
 
 @NgModule({

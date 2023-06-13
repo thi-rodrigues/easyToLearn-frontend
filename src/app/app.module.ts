@@ -29,13 +29,13 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { HomeComponent } from './view/home/home.component';
 import { MenssagesComponent } from './utils/menssages/menssages.component';
-import { UsuarioListComponent } from './view/usuario/usuario-list/usuario-list.component';
-import { UsuarioFormComponent } from './view/usuario/usuario-form/usuario-form.component';
-import { UsuarioEditComponent } from './view/usuario/usuario-edit/usuario-edit.component';
 
 import {MatTreeModule} from '@angular/material/tree';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { PraticarComponent } from './view/praticar/praticar.component';
+import { PalavraComponent } from './view/palavra/palavra.component';
+import { DicionarioComponent } from './view/dicionario/dicionario.component';
 
 @NgModule({
   declarations: [
@@ -45,9 +45,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     NavigationComponent,
     HomeComponent,
     MenssagesComponent,
-    UsuarioListComponent,
-    UsuarioFormComponent,
-    UsuarioEditComponent
+    PraticarComponent,
+    PalavraComponent,
+    DicionarioComponent
   ],
   imports: [
     BrowserModule,
