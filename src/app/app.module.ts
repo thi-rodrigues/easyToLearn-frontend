@@ -23,7 +23,7 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { PaginatorModule } from 'primeng/paginator';
-// import { ChartModule } from 'primeng/chart';
+import { ChartModule } from 'primeng/chart';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -39,7 +39,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { PraticarComponent } from './view/praticar/praticar.component';
 import { PalavraComponent } from './view/palavra/palavra.component';
 import { DicionarioComponent } from './view/dicionario/dicionario.component';
-import { EstatisticasComponent } from './view/estatisticas/estatisticas.component';
+import { RecordsComponent } from './view/records/records.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +52,7 @@ import { EstatisticasComponent } from './view/estatisticas/estatisticas.componen
     PraticarComponent,
     PalavraComponent,
     DicionarioComponent,
-    EstatisticasComponent
+    RecordsComponent
   ],
   imports: [
     BrowserModule,
@@ -80,7 +80,7 @@ import { EstatisticasComponent } from './view/estatisticas/estatisticas.componen
     MatFormFieldModule,
     ProgressBarModule,
     PaginatorModule,
-    // ChartModule,
+    ChartModule,
   ],
   providers: [ MessageService, MenssagesComponent, RouterLink, ConfirmationService ],
   bootstrap: [ AppComponent ]

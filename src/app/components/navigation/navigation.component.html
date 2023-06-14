@@ -1,5 +1,6 @@
 <p-button class="button-opened" icon="pi pi-align-justify" (click)="toggleSideNav()" class="button-opened"
-styleClass="p-button-text p-button-lg"></p-button><br>
+    styleClass="p-button-text p-button-lg">
+</p-button>
 
 <mat-sidenav-container class="container" style="background-color: #fff;">
     <mat-sidenav class="sidenav" mode="side" [opened]="opened" fixedInViewport="true" fixedTopGap="64">
@@ -16,6 +17,10 @@ styleClass="p-button-text p-button-lg"></p-button><br>
             <a mat-list-item routerLink="/praticar"> 
                 <i class="material-icons"> list </i>
                 <span> Praticar </span>
+            </a>
+            <a mat-list-item routerLink="/records"> 
+                <i class="material-icons"> list </i>
+                <span> Records </span>
             </a>
         </mat-nav-list>
     </mat-sidenav>
