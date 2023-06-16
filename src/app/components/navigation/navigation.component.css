@@ -3,12 +3,15 @@
     width: 150px;
 }
 
+.nav-list {
+    padding: 0;
+}
+
 .sidenav i {
     padding-right: 10px;
 }
 
 .content {
-    /* padding: 16px; */
     background-color: #212121;
     height: 100%;
 }
